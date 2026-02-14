@@ -1,0 +1,40 @@
+{
+  "default": "restrictive",
+  "profiles": [
+    {
+      "name": "restrictive",
+      "description": "Default restrictive sandbox — no network, minimal FS",
+      "tool_patterns": ["*"],
+      "config": {
+        "allowed_paths": ["/tmp/sandbox"],
+        "denied_paths": ["/etc", "/var", "/root", "/home"],
+        "allow_network": false,
+        "max_memory_mb": 128,
+        "timeout_seconds": 10
+      }
+    },
+    {
+      "name": "web-tools",
+      "description": "Network-enabled tools with host allowlist",
+      "tool_patterns": ["web_search", "url_fetch", "http_request"],
+      "config": {
+        "allowed_paths": ["/tmp/sandbox"],
+        "allow_network": true,
+        "allowed_hosts": ["api.google.com", "api.bing.com"],
+        "max_memory_mb": 256,
+        "timeout_seconds": 30
+      }
+    },
+    {
+      "name": "file-tools",
+      "description": "File operations with scoped access",
+      "tool_patterns": ["read_file", "write_file", "list_files"],
+      "config": {
+        "allowed_paths": ["/tmp/sandbox", "/data/agent"],
+        "denied_paths": ["/etc", "/var", "/root"],
+        "allow_network": false,
+        "timeout_seconds": 15
+      }
+    }
+  ]
+}
