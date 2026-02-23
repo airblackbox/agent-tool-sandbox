@@ -1,5 +1,10 @@
 # Agent Tool Sandbox
 
+[![CI](https://github.com/airblackbox/agent-tool-sandbox/actions/workflows/ci.yml/badge.svg)](https://github.com/airblackbox/agent-tool-sandbox/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/airblackbox/agent-tool-sandbox/blob/main/LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-3776AB.svg?logo=python&logoColor=white)](https://python.org)
+
+
 An isolated execution environment for AI agent tool calls with resource limits, timeouts, output capture, and rollback support.
 
 ## Features
